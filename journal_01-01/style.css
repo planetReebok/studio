@@ -18,7 +18,7 @@ nav,
 footer {
     width: 100vw;
     display: flex;
-/*    flex-direction: row; */
+    /*    flex-direction: row; */
     justify-content: space-between;
 }
 
@@ -38,17 +38,18 @@ li {
 
 /* VERTICAL SPACE */
 
-p:not(:first-child), li:not(:first-child) {
-    margin-top: 1em; 
+p:not(:first-child),
+li:not(:first-child) {
+    margin-top: 1em;
 }
 
-/* LAYOUT */
+/* LAYOUT WITH GRID */
 
 main {
-    padding: 1rem; 
+    margin: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1rem; 
+    grid-gap: 1rem;
 }
 
 main h1 {
@@ -61,10 +62,63 @@ main details {
 }
 
 main ul:not(:last-child) {
-    column-count: 2; 
+    /*    column-count: 2;*/
 }
 
 main > * {
-    background-color: darkgray; 
-    padding: 1rem; 
+    /*    background-color: darkgray;*/
+    border-top: 2px solid black;
+    padding: 1rem;
 }
+
+/* TYPSETTING IN DETAIL */
+
+* {
+    font-family: "antipol-variable", sans-serif;
+
+}
+
+.title {
+    font-family: "antipol-variable", sans-serif;
+    font-variation-settings: "STCH"1, "wdth"150, "wght"400;
+    font-size: clamp(1rem, 5.5cqi, 6rem);
+}
+
+@media screen and (min-width: 900px) {
+    .title {
+        font-variation-settings: "STCH"1, "wdth"200, "wght"400;
+    }
+}
+
+.overview {
+    font-size: 1rem;
+    line-height: 1.25em;
+    column-gap: 2.5rem; 
+
+    @media (min-width: 600px) {
+        column-count: 2;
+    }
+    @media (min-width: 1000px) {
+        column-count: 3;
+    }
+}
+
+/* LAYOUT WITH FLEX */
+
+/*
+main {
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+main > * {
+    background-color: floralwhite;
+    flex-grow: 1;
+}
+
+.title, .overview {
+    flex-basis: 1; 
+}
+*/
