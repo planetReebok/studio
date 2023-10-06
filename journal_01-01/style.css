@@ -22,23 +22,33 @@ footer {
 }
 
 nav {
-    background-color: lightgrey;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid black;
+}
+
+nav p {
+    display: inline;
 }
 
 footer {
-    background-color: antiquewhite;
+    border-top: 1px solid black;
+    margin-top: 3rem;
 }
 
 /* LIST */
 
-li {
+li,
+.overview,
+summary {
     list-style: none;
 }
 
 /* VERTICAL SPACE */
 
 p:not(:first-child),
-li:not(:first-child) {
+main li:not(:first-child) {
     margin-top: 1em;
 }
 
@@ -47,27 +57,32 @@ li:not(:first-child) {
 main {
     margin: 1rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 1rem;
 }
 
-main h1 {
-    grid-column: 1 / 4;
-}
+@media only screen and (min-width:1000px) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-main details {
-    grid-column: 1/4;
-    grid-row: 2/3;
-}
+    main h1 {
+        grid-column: 1 / 4;
+    }
 
-main ul:not(:last-child) {
-    /*    column-count: 2;*/
+    main details {
+        grid-column: 1/4;
+        grid-row: 2/3;
+    }
+
 }
 
 main > * {
-/*    background-color: beige;*/
+    padding: 1rem 1rem 0 1rem;
+}
+
+main > *:not(h1) {
     border-top: 2px solid black;
-    padding: 1rem;
 }
 
 /* TYPSETTING IN DETAIL */
@@ -84,18 +99,21 @@ main > * {
 
 @media screen and (min-width: 900px) {
     .title {
-        font-variation-settings: "STCH"1, "wdth"200, "wght"400;
+        font-variation-settings: "STCH"1, "wdth"200, "wght"300;
     }
 }
 
-.overview {
-/*    display: inline;*/
+main li:first-of-type {
+    font-weight: 700;
+}
+
+.overview,
+li, div p {
     font-size: 1.2rem;
     line-height: 1.25em;
     column-width: 30ch;
     column-gap: 2.5rem;
     overflow: hidden;
-    list-style: none;
 }
 
 details summary:not([open])::after {
@@ -104,17 +122,22 @@ details summary:not([open])::after {
 
 details[open] summary::after {
     content: " –";
-    
+
 }
 
 details[open] {
-    background-color: #F5F5F5; 
+    color: darkblue;
 }
 
 summary {
     display: block;
     cursor: pointer;
-    list-style: none;
+}
+
+/* HOVER */
+
+a:hover {
+    color: orangered;
 }
 
 /* LAYOUT WITH FLEX */
