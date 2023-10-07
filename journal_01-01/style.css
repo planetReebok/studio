@@ -1,14 +1,18 @@
 /* UNIVERSAL */
 
-:root {
-    --key-color: orangered;
-}
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-size: 100%;
+}
+
+
+/* CUSTOM PROPERTIES (VARIABLES) */
+
+:root {
+    --key-color1: #0FFF50; /* fluorescent green */
+    --key-color2: #0096FF; /* bright blue */
 }
 
 /* LAYOUT: NAV, HEADER, FOOTER */
@@ -28,7 +32,7 @@ nav {
     background-color: white;
     position: sticky;
     top: 0;
-    border-bottom: 2px solid orangered;
+    border-bottom: 2px solid var(--key-color2);
 }
 
 nav p {
@@ -88,7 +92,7 @@ main {
 }
 
 main > *:not(h1) {
-    border-top: 1px solid orangered;
+    border-top: 1px solid var(--key-color2);
     padding: 1rem 1rem 0 1rem;
 }
 
@@ -164,17 +168,20 @@ summary {
 /* LINKS */
 
 a {
-    color: inherit; 
+    color: inherit;
 }
 
 a:link {
     text-decoration: none;
 }
 
-a:hover,
-a:focus {
-    display: block; 
-    color: white;
-    background-color: var(--key-color);
-    transform: translate(0.25em,0); 
+main a:hover,
+main a:focus {
+    display: block;
+    background-color: var(--key-color1);
+    transform: translate(0.25em, 0);
+}
+
+nav a:hover, nav a:focus {
+    background-color: var(--key-color1)
 }
