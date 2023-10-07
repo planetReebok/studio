@@ -94,7 +94,8 @@ h1 {
     font-family: "degular-variable", sans-serif;
 }
 
-body:not(.title), li {
+body:not(.title),
+li {
     font-size: 1.2rem;
 }
 
@@ -102,7 +103,7 @@ body:not(.title), li {
     font-family: "antipol-variable", sans-serif;
     font-size: 2rem;
     font-variation-settings: "STCH"1, "wdth"100, "wght"600;
-    color: #333; 
+    color: #333;
 }
 
 @media screen and (min-width: 1100px) {
@@ -147,8 +148,22 @@ summary {
     cursor: pointer;
 }
 
-/* HOVER */
+.fine-print {
+    font-size: 1rem;
+    line-height: 1.3em;
+}
+
+/* LINKS */
+
+a:link {
+    text-decoration: none;
+}
 
 a:hover {
-    color: orangered;
+    color: inherit;
+    text-decoration-line: underline;
+    text-decoration-skip: ink;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+    text-decoration-thickness: 12px;
 }
