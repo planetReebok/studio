@@ -162,7 +162,9 @@ details[open] summary::after {
 }
 
 details[open] {
-    color: darkblue;
+/*    color: darkblue;*/
+    background-color: HSL(140, 100%, 90%);
+    padding-bottom: 1rem; 
 }
 
 summary {
