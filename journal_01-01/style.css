@@ -45,7 +45,7 @@ footer {
     margin-top: 3rem;
 }
 
-/* LIST */
+/* LISTS */
 
 li,
 .overview,
@@ -163,7 +163,6 @@ details[open] summary::after {
 }
 
 details[open] {
-/*    color: darkblue;*/
     background-color: var(--sec-color1);
     padding-bottom: 1rem; 
 }
