@@ -14,8 +14,7 @@ footer {
     padding: 1rem 2rem;
 }
 
-nav,
-footer {
+nav {
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -25,7 +24,7 @@ nav {
     background-color: white;
     position: sticky;
     top: 0;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid orangered;
 }
 
 nav p {
@@ -47,13 +46,12 @@ summary {
 
 /* VERTICAL SPACE */
 
-p:not(:first-child),
-main li:not(:first-child) {
+ul li:not(:first-child) {
     margin-top: 1em;
 }
 
 summary {
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
 }
 
 /* LAYOUT: MAIN */
@@ -82,7 +80,7 @@ main {
 }
 
 main > *:not(h1) {
-    border-top: 2px solid black;
+    border-top: 1px solid orangered;
     padding: 1rem 1rem 0 1rem;
 }
 
@@ -112,21 +110,21 @@ h1 {
     }
 }
 
-main li:first-of-type {
+.list li:first-child {
     font-weight: 800;
 }
 
 .overview,
 div p,
 li {
-    font-weight: 300; 
+    font-weight: 300;
     line-height: 1.25em;
     column-width: 30ch;
     column-gap: 2.5rem;
     overflow: hidden;
 }
 
-main ul {
+.two-column {
     column-count: 2;
 }
 
@@ -136,7 +134,6 @@ details summary:not([open])::after {
 
 details[open] summary::after {
     content: " –";
-
 }
 
 details[open] {
