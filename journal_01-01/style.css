@@ -1,3 +1,15 @@
+/*
+TO IMPLEMENT:
+    - article layout 
+    - sticky section headers
+    - responsive images + lazy loading
+    - fluid typography (clamp, vw, cqi)
+
+IGNORE: 
+    - font to width (remove)
+*/
+
+
 /* UNIVERSAL */
 
 * {
@@ -85,10 +97,15 @@ main > *:not(h1) {
     border-top: 2px solid black;
 }
 
-/* TYPSETTING IN DETAIL */
+/* TYPSETTING */
 
 * {
     font-family: "degular-variable", sans-serif;
+}
+
+body {
+    font-size: 1.2rem;
+    line-height: 1.25em;
 }
 
 .title {
@@ -108,9 +125,8 @@ main li:first-of-type {
 }
 
 .overview,
-li, div p {
-    font-size: 1.2rem;
-    line-height: 1.25em;
+li,
+div p {
     column-width: 30ch;
     column-gap: 2.5rem;
     overflow: hidden;
