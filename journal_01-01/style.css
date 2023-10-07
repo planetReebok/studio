@@ -98,15 +98,17 @@ body:not(h1) {
     font-size: 1.2rem;
 }
 
-h1 {
+.title {
     font-family: "antipol-variable", sans-serif;
-    font-size: 2.25rem;
-    font-variation-settings: "STCH"1, "wdth"100, "wght"400;
+    font-size: 2rem;
+    font-variation-settings: "STCH"1, "wdth"100, "wght"600;
+    color: #333; 
 }
 
 @media screen and (min-width: 1100px) {
     .title {
-        font-variation-settings: "STCH"1, "wdth"250, "wght"700;
+        font-size: 3rem;
+        font-variation-settings: "STCH"1, "wdth"250, "wght"400;
     }
 }
 
