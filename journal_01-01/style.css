@@ -163,6 +163,10 @@ summary {
 
 /* LINKS */
 
+a {
+    color: inherit; 
+}
+
 a:link {
     text-decoration: none;
 }
