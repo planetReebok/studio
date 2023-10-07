@@ -94,7 +94,7 @@ h1 {
     font-family: "degular-variable", sans-serif;
 }
 
-body:not(h1) {
+body:not(.title), li {
     font-size: 1.2rem;
 }
 
