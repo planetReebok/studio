@@ -1,5 +1,9 @@
 /* UNIVERSAL */
 
+:root {
+    --key-color: orangered;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -54,6 +58,10 @@ summary {
     margin-bottom: 1rem;
 }
 
+main :is(div, ul) {
+    margin-bottom: 3rem;
+}
+
 /* LAYOUT: MAIN */
 
 main {
@@ -101,7 +109,7 @@ li {
 
 .title {
     font-family: "antipol-variable", sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-variation-settings: "STCH"1, "wdth"100, "wght"600;
     color: #333;
 }
@@ -159,11 +167,10 @@ a:link {
     text-decoration: none;
 }
 
-a:hover {
-    color: inherit;
-    text-decoration-line: underline;
-    text-decoration-skip: ink;
-    text-decoration-style: solid;
-    text-decoration-color: black;
-    text-decoration-thickness: 12px;
+a:hover,
+a:focus {
+    display: block; 
+    color: white;
+    background-color: var(--key-color);
+    transform: translate(0.25em,0); 
 }
