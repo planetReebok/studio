@@ -10,11 +10,11 @@
 /* CUSTOM PROPERTIES (VARIABLES) */
 
 :root {
-    --pri-color-1: #0096FF;
+    --pri-color-1: HSL(205, 100%, 50%);
     /* bright blue */
-    --pri-color-2: #0FFF50;
+    --pri-color-2: HSL(135, 100%, 55%);
     /* fluorescent green */
-    --sec-color-1: #ECFFDC;
+    --sec-color-1: HSL(95, 100%, 95%);
     /* light cream */
 }
 
@@ -184,7 +184,7 @@ summary {
 
 a {
     color: inherit;
-    animation: 6s highlight-clickable; 
+    animation: 6s highlight-clickable;
     animation-iteration-count: 1
 }
 
@@ -214,7 +214,7 @@ nav a:focus {
     33% {
         color: var(--pri-color-1)
     }
-    
+
     66% {
         color: var(--pri-color-2)
     }
