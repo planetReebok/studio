@@ -25,6 +25,7 @@ footer {
     padding: 1rem 2rem;
 }
 nav {
+    z-index: 100;
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -47,12 +48,13 @@ header {
     background-image: url(images/fullBleedHeader_Nissan-2012-Patrol-Pickup-Desert-Rear.jpg);
     background-blend-mode: multiply;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
     height: 50vh;
     position: relative;
 }
 
 /* HEADER: FULL-BLEED, REPEAT, PATTERN, SVG, SOLID COLOR, BLEND */
+
 
 /*
 header {
@@ -67,7 +69,9 @@ header {
 }
 */
 
+
 /* HEADER: FULL-BLEED, REPEAT, PATTERN, SVG, LINEAR GRADIENT, BLEND */
+
 
 /*
 header {
@@ -80,6 +84,7 @@ header {
     position: relative;
 }
 */
+
 
 /* FOOTER */
 
@@ -111,7 +116,7 @@ summary {
     margin-bottom: 0;
 }
 
-/* LAYOUT: MAIN */
+/* LAYOUT: MAIN, GRID */
 
 main {
     margin: 1rem;
@@ -135,6 +140,20 @@ main {
 main > * {
     border-top: 1px solid var(--pri-color-1);
     padding: 1rem 1rem 0 1rem;
+}
+
+/* CARDS */
+
+.card-container {
+    grid-column: 1/4;
+    display: grid;
+    grid-template-columns: subgrid;
+    padding: 1rem 0; 
+}
+.card {
+    background: #F2F2F2;
+    padding: 1rem; 
+    margin-bottom: 1rem; 
 }
 
 /* TYPSETTING */
