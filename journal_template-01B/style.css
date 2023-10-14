@@ -46,6 +46,7 @@ header {
     color: white;
     background-color: var(--pri-color-1);
     background-image: url(images/fullBleedHeader_Nissan-2012-Patrol-Pickup-Desert-Rear.jpg);
+    background-position: center;
     background-blend-mode: multiply;
     background-repeat: no-repeat;
     background-size: cover;
@@ -106,20 +107,20 @@ summary {
 ul li:not(:first-child) {
     margin-top: 1em;
 }
-main:is(div, ul) {
-    margin-bottom: 3rem;
-}
 summary {
     margin-bottom: 1rem;
 }
 .project-title {
     margin-bottom: 0;
 }
+.card-container {
+    margin-bottom: 4rem; 
+}
 
 /* LAYOUT: MAIN, GRID */
 
 main {
-    margin: 1rem;
+    margin: 1rem 1rem 3rem 1rem;
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 1rem;
@@ -142,18 +143,38 @@ main > * {
     padding: 1rem 1rem 0 1rem;
 }
 
-/* CARDS */
+/* LAYOUT: CARDS */
 
 .card-container {
-    grid-column: 1/4;
-    display: grid;
+    grid-column: 1;
     grid-template-columns: subgrid;
-    padding: 1rem 0; 
+    padding: 1rem 0;
 }
 .card {
-    background: #F2F2F2;
-    padding: 1rem; 
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
+    display: flex;
+    border: 1px solid var(--pri-color-1);
+    border-radius: 5px;
+    background-color: var(--sec-color-1);
+}
+@media only screen and (min-width:1000px) {
+    .card-container {
+        grid-column: 1/4;
+        display: grid;
+    }
+    .feature {
+        grid-row: span 2;
+    }
+}
+.card img {
+    object-fit: cover;
+    filter: grayscale(100%);
+    max-height: 12rem;
+    aspect-ratio: 1/1;
+    mix-blend-mode: multiply;
+}
+.card div:has(p) {
+    margin: 1rem;
 }
 
 /* TYPSETTING */
@@ -209,12 +230,17 @@ summary {
     display: block;
     cursor: pointer;
 }
-.fine-print {
+.card p:first-child {
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+}
+.fine-print,
+.card p:not(:first-child) {
     font-size: 1rem;
     line-height: 1.3em;
 }
 
-/* LINKS */
+/* LINKS + ANIMATION, FILTERS, TRANSFORM */
 
 a {
     color: inherit;
@@ -224,15 +250,20 @@ a {
 a:link {
     text-decoration: none;
 }
-main a:hover,
-main a:focus {
-    display: block;
-    background-color: var(--pri-color-2);
-    transform: translate(0.25em, 0);
-}
 nav a:hover,
-nav a:focus {
-    background-color: var(--pri-color-2)
+nav a:focus,
+.fine-print a:hover,
+.fine-print a:focus,
+.card:hover,
+.card:focus {
+    color: white;
+    background-color: var(--pri-color-1);
+    cursor: pointer;
+    & img {
+        filter: grayscale(0%);
+        mix-blend-mode: normal;
+        /* nested style */
+    }
 }
 
 /* ANIMATION */
