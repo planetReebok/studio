@@ -1,0 +1,322 @@
+/* ROOT: CUSTOM PROPERTIES (VARIABLES) */
+
+:root {
+    --pri-color-1: HSL(205, 100%, 50%);
+    /* bright blue */
+    --pri-color-2: HSL(135, 100%, 55%);
+    /* fluorescent green */
+    --sec-color-1: HSL(95, 100%, 95%);
+    /* light cream */
+}
+
+/* UNIVERSAL: CSS RESETS */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+/* BODY: OVERFLOW */
+
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* NAVIGATION: TOP, STICKY */
+
+nav,
+footer {
+    padding: 1rem 2rem;
+}
+nav {
+    z-index: 100;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+nav {
+    background-color: white;
+    position: sticky;
+    top: 0;
+    border-bottom: 2px solid var(--pri-color-1);
+}
+nav p {
+    display: inline;
+}
+
+/* HEADER: FULL-BLEED, HERO IMAGE, SOLID COLOR, BLEND */
+
+header {
+    color: white;
+    background-color: var(--pri-color-1);
+    background-image: url(images/fullBleedHeader_Nissan-2012-Patrol-Pickup-Desert-Rear.jpg);
+    background-position: center;
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    position: relative;
+}
+
+/* HEADER: FULL-BLEED, REPEAT, PATTERN, SVG, SOLID COLOR, BLEND */
+
+
+/*
+header {
+    color: black;
+    background-color: var(--pri-color-1);
+    background-image: url(images/pattern_stripe_30degree.svg);
+    background-repeat: repeat;
+    background-blend-mode: screen;
+    background-size: 25vh;
+    height: 50vh;
+    position: relative;
+}
+*/
+
+
+/* HEADER: FULL-BLEED, REPEAT, PATTERN, SVG, LINEAR GRADIENT, BLEND */
+
+
+/*
+header {
+    color: black;
+    background: linear-gradient(var(--pri-color-1), var(--pri-color-2)), url(images/pattern_stripe_30degree.svg);
+    background-repeat: repeat;
+    background-blend-mode: screen;
+    background-size: 25vh;
+    height: 50vh;
+    position: relative;
+}
+*/
+
+
+/* LISTS */
+
+li,
+.overview,
+summary {
+    list-style: none;
+}
+
+/* VERTICAL SPACE */
+
+ul li:not(:first-child) {
+    margin-top: 1em;
+}
+summary {
+    margin-bottom: 1rem;
+}
+.project-title {
+    margin-bottom: 0;
+}
+.card-container {
+    margin-bottom: 4rem;
+}
+
+/* LAYOUT: MAIN (CSS FLEXIBLE BOX, aka FLEXBOX) */
+
+main {
+    margin: 1rem 1rem 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+main > * {
+    border-top: 1px solid var(--pri-color-1);
+    padding: 1rem 1rem 0 1rem;
+}
+
+/* LAYOUT: CARDS, FOOTER (CSS GRID) */
+
+.card-container,
+footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-gap: 1rem;
+    padding: 1rem 0;
+}
+footer {
+    margin: 1rem;
+}
+footer > * {
+    border-top: 1px solid var(--pri-color-1);
+    padding: 1rem 0;
+}
+.card {
+    margin-bottom: 1rem;
+    display: flex;
+    border: 1px solid var(--pri-color-1);
+    border-radius: 5px;
+    background-color: var(--sec-color-1);
+}
+.card img {
+    object-fit: cover;
+    filter: grayscale(100%);
+    max-height: 12rem;
+    aspect-ratio: 1/1;
+    mix-blend-mode: multiply;
+}
+.card div:has(p) {
+    margin: 1rem;
+}
+
+/* INLINE LAYOUT */
+
+.inline-container * {
+    font-family: "mikrobe-variable", sans-serif;
+    display: inline;
+    /*    font-size: clamp(1.5rem, -0.2857rem + 4.7619vw, 4rem);*/
+    font-size: clamp(3.75rem, 2.1429rem + 4.2857vw, 6rem);
+    font-variation-settings: "wdth" 90;
+    color: #555;
+    letter-spacing: 0.05rem;
+}
+@media screen (min-width:1000px) {
+    .inline-container * {
+        letter-spacing: 0;
+    }
+}
+.inline-container > *:not(:last-child) {
+    margin-right: 1rem;
+}
+.inline-container p {
+    font-weight: 200;
+    white-space: nowrap;
+}
+.inline-container p:not(:first-of-type)::before {
+    content: " / ";
+}
+.inline-container img {
+    height: 1.4ex;
+}
+
+/* TYPSETTING */
+
+* {
+    font-family: "degular-variable", sans-serif;
+}
+.title {
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    font-family: "mikrobe-variable", sans-serif;
+    font-variation-settings: "wdth" 125;
+    font-size: 1.5rem;
+    line-height: 1em;
+    letter-spacing: 0.04em;
+    width: 45ch;
+}
+@media screen and (min-width: 1100px) {
+    .title {
+        font-size: 4rem;
+    }
+}
+body:not(.title),
+li {
+    font-size: 1.2rem;
+}
+.list li:first-child {
+    font-weight: 800;
+}
+.overview,
+div p,
+li {
+    font-weight: 300;
+    line-height: 1.25em;
+    column-width: 30ch;
+    column-gap: 2.5rem;
+    overflow: hidden;
+}
+.two-column {
+    column-count: 2;
+}
+details summary:not([open])::after {
+    content: " ＋";
+}
+details[open] summary::after {
+    content: " –";
+}
+details[open] {
+    background-color: var(--sec-color-1);
+    padding-bottom: 1rem;
+}
+summary {
+    display: block;
+    cursor: pointer;
+}
+.card p:first-child {
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+}
+.fine-print,
+.card p:not(:first-child) {
+    font-size: 1rem;
+    line-height: 1.3em;
+}
+
+/* LINKS: FILTERS, TRANSFORM */
+
+a {
+    color: inherit;
+    animation: 6s highlight-clickable;
+    animation-iteration-count: 1
+}
+a:link {
+    text-decoration: none;
+}
+nav a:hover,
+nav a:focus,
+.fine-print a:hover,
+.fine-print a:focus,
+.card:hover,
+.card:focus {
+    color: white;
+    background-color: var(--pri-color-1);
+    cursor: pointer;
+    & img {
+        filter: grayscale(0%);
+        mix-blend-mode: normal;
+        /* nested style */
+    }
+}
+.inline-container div a:hover {
+    background-color: var(--pri-color-2);
+}
+
+/* ANIMATION */
+
+@keyframes highlight-clickable {
+    0% {
+        color: black
+    }
+    33% {
+        color: var(--pri-color-1)
+    }
+    66% {
+        color: var(--pri-color-2)
+    }
+    100% {
+        color: black
+    }
+}
+
+/* PRINT */
+
+@page {
+    size: A4 portrait;
+}
+@media print {
+    body {
+        margin-left: 2cm;
+        margin-right: 2cm;
+        color: #000;
+        background-color: #FFF;
+    }
+    .non-printing {
+        display: none !important;
+    }
+}
