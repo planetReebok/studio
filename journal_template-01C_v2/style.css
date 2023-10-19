@@ -36,7 +36,15 @@ main {
     margin: 0 auto;
 }
 
-/* CONTAINERS */
+/* MAIN */
+
+.rounded-rectangle {
+    font-size: 0.75rem; 
+    vertical-align: middle; 
+    padding: 0.5ex 0.25rem; 
+    border: 1px solid black; 
+    border-radius: 5px; 
+}
 
 .inline-container {
     margin: 0.5rem 0; 
@@ -45,14 +53,6 @@ main {
 .inline-container * {
     display: inline;
     color: #555;
-    letter-spacing: 0.05rem;
-    letter-spacing: -0.05em;
-}
-
-@media screen (min-width:1000px) {
-    .inline-container * {
-        letter-spacing: 0;
-    }
 }
 
 .inline-container > *:not(:last-child) {
