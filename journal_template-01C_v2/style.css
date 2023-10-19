@@ -93,7 +93,7 @@ sup {
     font-weight: 500;
 }
 
-sup::before {
+sup::after {
     content: " ";
 }
 
