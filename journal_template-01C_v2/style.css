@@ -33,21 +33,44 @@
 
 main {
     max-width: 36ch;
-    margin: 0 auto;
+    margin: 0 0.5rem;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: fixed;
+    right: 2rem;
+    transform-origin: right;
+    transform: rotate(-90deg);
+    padding: 0 0.25rem;
+}
+
+nav p,
+nav a {
+    display: inline;
+    font-size: 0.6rem;
+    text-decoration: none;
+    color: #888;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: black;
 }
 
 /* MAIN */
 
 .rounded-rectangle {
-    font-size: 0.75rem; 
-    vertical-align: middle; 
-    padding: 0.5ex 0.25rem; 
-    border: 1px solid black; 
-    border-radius: 5px; 
+    font-size: 0.75rem;
+    vertical-align: middle;
+    padding: 0.5ex 0.25rem;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .inline-container {
-    margin: 0.5rem 0; 
+    margin: 0.5rem 0;
 }
 
 .inline-container * {
@@ -81,8 +104,14 @@ div:blank {
 
 .overview {
     font-size: 0.45rem;
-    vertical-align: super;
+    vertical-align: middle;
 }
+
+.overview::before {
+    content: "OVERVIEW ○ ";
+    font-weight: 500;
+}
+
 
 /* SUPERSCRIPT */
 
@@ -112,14 +141,63 @@ hr {
 
 .inline-container a:hover {
     text-decoration: line-through;
-    color: red;
+    color: inherit;
     text-decoration-thickness: 0.05em;
 }
 
 .inline-container img:hover {
-    transition: transform 0.2s;
-    transform: scale(2);
+    transition: transform 0.3s;
+    transform: scale(3);
 }
+
+/* SEMESTER */
+
+.semester-one * {
+    color: orangered;
+}
+
+.semester-two * {
+    color: darkblue;
+}
+
+/* INLINE BLOCK */
+
+.display-inline-block {
+    display: inline-block;
+    line-height: 0.5em;
+    max-width: 21rem;
+}
+
+.display-inline-block::first-line {}
+
+/* FOOTER */
+
+footer p, footer a {
+    font-size: 0.5rem;
+    max-width: 45ch; 
+}
+
+footer div {
+    margin: 1rem 0 1rem 1rem; 
+}
+
+/* FIGCAPTION */
+
+figcaption {
+    position: absolute;
+    font-size: 1rem;
+    vertical-align: baseline; 
+    background-color: black;
+    padding: 10px;
+    border-radius: 0 15px 30px 30px; 
+    display: none !important;
+}
+
+/*
+a:hover figcaption {
+    display: block !important;
+}
+*/
 
 /* DEBUGGING CSS */
 
