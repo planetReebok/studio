@@ -192,13 +192,14 @@ figcaption {
     vertical-align: baseline;
     background-color: black;
     padding: 10px;
-    border-radius: 0 15px 30px 30px;
+/*    border-radius: 0 15px 30px 30px;*/
     display: none !important;
 }
 
 /*
 a:hover figcaption {
     display: block !important;
+    z-index: 100; 
 }
 */
 
