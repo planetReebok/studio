@@ -26,7 +26,7 @@
 
 * {
     font-family: sans-serif;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 2rem;
     /*    font-size: clamp(1.5rem, -0.2857rem + 4.7619vw, 4rem);*/
 }
@@ -139,11 +139,13 @@ hr {
     text-decoration: none;
 }
 
+/*
 .inline-container a:hover {
     text-decoration: line-through;
     color: inherit;
     text-decoration-thickness: 0.05em;
 }
+*/
 
 .inline-container img:hover {
     transition: transform 0.3s;
@@ -172,13 +174,14 @@ hr {
 
 /* FOOTER */
 
-footer p, footer a {
+footer p,
+footer a {
     font-size: 0.5rem;
-    max-width: 45ch; 
+    max-width: 45ch;
 }
 
 footer div {
-    margin: 1rem 0 1rem 1rem; 
+    margin: 1rem 0 1rem 1rem;
 }
 
 /* FIGCAPTION */
@@ -186,10 +189,10 @@ footer div {
 figcaption {
     position: absolute;
     font-size: 1rem;
-    vertical-align: baseline; 
+    vertical-align: baseline;
     background-color: black;
     padding: 10px;
-    border-radius: 0 15px 30px 30px; 
+    border-radius: 0 15px 30px 30px;
     display: none !important;
 }
 
@@ -198,6 +201,28 @@ a:hover figcaption {
     display: block !important;
 }
 */
+
+/* ANIMATION */
+
+.inline-container p {
+    position: relative; 
+}
+
+.inline-container  a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 0.125rem;
+    left: 0;
+    top: calc(50% - 0.125rem/2);
+    background-color: black;
+    transition: 0.25s ease-in-out;
+    pointer-events: none;
+}
+
+.inline-container a:hover::after {
+    width: 100%;
+}
 
 /* DEBUGGING CSS */
 
