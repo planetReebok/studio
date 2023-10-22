@@ -1,0 +1,171 @@
+/* UNIVERSAL: CSS RESETS */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+/* LOAD GOOGLE FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100..900&display=swap');
+
+
+/*
+Layout employs these layout ideas and methods: 
+- fluid design; layout ideas pre-dating introduction of flex
+- float: left 
+- no margins; only padding
+
+*/
+
+/* LAYOUT */
+
+.half {
+    height: 49vh;
+    overflow-y: scroll;
+}
+
+article div,
+footer {
+    margin-top: 1rem;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.title-block {
+/*    float: inline-start;*/
+    vertical-align: baseline;
+}
+
+.overview p:first-child {
+    /*    color: red;*/
+    float: left;
+    margin-right: 1em;
+    font-weight: 600;
+}
+
+.overview p:not(first-child) {
+    /*    color: darkgreen;*/
+    max-width: 60ch;
+    font-weight: 400;
+}
+
+.float {
+    float: right;
+}
+
+.semester * {
+    display: inline;
+}
+
+.semester *:not(:first-child) {
+    margin-right: 0.1em;
+}
+
+/* TYPESETTING */
+
+* {
+    font-family: "Public Sans", sans-serif;
+}
+
+p {
+    font-weight: 400;
+    line-height: 1.3em;
+}
+
+.cpj-title {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: -0.25rem;
+    padding: 1rem;
+    line-height: 0.9;
+    color: #999;
+    /*    transform: rotate(-3deg); */
+    transform: rotate(-3deg);
+}
+
+.student-name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: -1.25rem;
+    padding: 0.25rem;
+    border: 1px solid #999;
+    /*    background-color: white;*/
+    transform: rotate(0deg);
+}
+
+.semester {
+    font-size: 4.25rem;
+    color: dimgrey;
+    letter-spacing: -0.1rem;
+}
+
+footer {
+    display: block;
+    column-width: 45ch;
+    column-rule: 1px solid black;
+}
+
+footer div {
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+sup {
+    line-height: 0;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+hr {
+    border: 2px solid #999;
+/*    box-shadow: inset 0 1rem 1rem -1rem rgba(0, 0, 0, 0.25);*/
+    mix-blend-mode: multiply;  
+}
+
+/* IMAGES */
+
+.semester img {
+    height: 1.5ex;
+    vertical-align: baseline;
+    line-height: 0;
+}
+
+img:hover {
+    transition: transform 0.3s;
+    transform: scale(3);
+    border: 0.1px solid black;
+}
+
+/* LINKS */
+
+a {
+    text-decoration: none;
+}
+
+/* ANIMATION */
+
+p {
+    position: relative;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 0.125rem;
+    left: 0;
+    top: calc(50% - 0.125rem/2);
+    background-color: black;
+    transition: 0.25s ease-in-out;
+    pointer-events: none;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+a:visited {
+    color: inherit;
+}
