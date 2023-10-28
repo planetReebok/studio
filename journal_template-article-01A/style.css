@@ -9,18 +9,85 @@
     /* light cream */
 }
 
-/* UNIVERSAL: CSS RESETS */
+/* CSS RESETS: GENERAL
+key reference: Andy Bell, https://andy-bell.co.uk/a-more-modern-css-reset */
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-size: 100%;
+}
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0;
+}
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+body {
+    min-height: 100vh;
+}
+img,
+picture,
+svg,
+video {
+    max-width: 100%;
+    display: block;
 }
 
-/* BODY: OVERFLOW */
+/* OVERFLOW */
 
 body {
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+/* CSS RESETS: TYPOGRAPHY */
+
+html {
+    font-size: 100%
+}
+body {
+    font-family: system-ui;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+article {}
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1;
+}
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+}
+
+/* LINKS */
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
 }
