@@ -1,0 +1,195 @@
+/* ROOT: CUSTOM PROPERTIES (VARIABLES) */
+
+:root {
+    --pri-color-1: HSL(205, 100%, 50%);
+    /* bright blue */
+    --pri-color-2: HSL(135, 100%, 55%);
+    /* fluorescent green */
+    --sec-color-1: HSL(95, 100%, 95%);
+    /* light cream */
+}
+
+/* UNIVERSAL: CSS RESETS */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+/* LOAD GOOGLE FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100..900&display=swap');
+
+/* LAYOUT */
+
+.half {
+    height: 49vh;
+    overflow-y: scroll;
+}
+
+article div,
+footer {
+    margin-top: 1rem;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.title-block {
+    vertical-align: baseline;
+}
+
+.overview p:first-child {
+    /*    color: red;*/
+    float: left;
+    margin-right: 1em;
+    font-weight: 600;
+}
+
+.overview p:not(first-child) {
+    max-width: 60ch;
+    font-weight: 400;
+}
+
+.float {
+    float: right;
+}
+
+.semester * {
+    display: inline;
+}
+
+.semester *:not(:first-child) {
+    margin-right: 0.1em;
+}
+
+/* TYPESETTING */
+
+* {
+    font-family: "Public Sans", sans-serif;
+}
+
+p {
+    font-weight: 400;
+    line-height: 1.4em;
+}
+
+.cpj-title {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: -0.25rem;
+    padding: 1rem;
+    line-height: 0.9;
+    color: var(--pri-color-1);
+    transform: rotate(-3deg);
+}
+
+.student-name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: -1.25rem;
+    padding: 0.25rem;
+    color: var(--pri-color-1);
+    border: 1px solid var(--pri-color-1);
+    transform: rotate(0deg);
+}
+
+.semester {
+    font-size: 4.25rem;
+    color: #999;
+    letter-spacing: -0.1rem;
+}
+
+footer {
+    display: block;
+    column-width: 45ch;
+    column-rule: 1px solid var(--pri-color-1);
+    border-top: 1px solid var(--pri-color-1);
+    padding-top: 1.5rem; 
+}
+
+footer div {
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+sup {
+    line-height: 0;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+hr {
+    border: 2px solid var(--pri-color-1);
+}
+
+/* IMAGES */
+
+.semester img {
+    height: 1.5ex;
+    vertical-align: baseline;
+    line-height: 0;
+}
+
+img:hover {
+    transition: transform 0.3s;
+    transform: scale(3);
+    border: 0.1px solid var(--pri-color-2);
+}
+
+/* LINKS */
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
+.semester a:hover,
+.semester a:focus {
+    color: black;
+}
+
+/* ANIMATION */
+
+p {
+    position: relative;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1ex;
+    left: 0;
+    bottom: 0.25ex;
+    background-color: var(--pri-color-2);
+    transition: 0.25s ease-in-out;
+    pointer-events: none;
+    z-index: -10;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* SCROLL BAR */
+
+::-webkit-scrollbar {
+    width: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(0 0% 80% / 1);
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(0 0% 60% / 1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--pri-color-1);
+}
