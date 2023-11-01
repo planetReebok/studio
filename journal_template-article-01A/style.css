@@ -208,13 +208,15 @@ figure:not([class]) {
     grid-auto-flow: column;
     grid-auto-columns: clamp(27%, 40vh, 75%);
     overflow-x: auto;
+    overflow-y: hidden;
     overscroll-behavior-inline: contain;
-    background-color: var(--color-background); 
-    scroll-snap-type: inline mandatory; 
+    /*    background-color: var(--color-background); */
+    scroll-snap-type: inline mandatory;
+    border-top: 1.5px solid var(--color-background);
 }
 
 .horizontal-scroll div {
-    scroll-snap-align: start; 
+    scroll-snap-align: start;
 }
 
 .horizontal-scroll img {
@@ -224,7 +226,7 @@ figure:not([class]) {
 }
 
 .horizontal-scroll {
-    margin-left: 1rem; 
+    margin-left: 1rem;
 }
 
 /* TYPOGRAPHY IN DETAIL | TYPESETTING */
@@ -290,10 +292,14 @@ figcaption {
     font-family: var(--monospace), monospace;
     font-size: var(--font-size-small);
     line-height: var(--line-height-small);
-    padding: 1em;
+    padding: 1rem 0;
     max-width: 80ch;
     margin: 0 auto;
     justify-content: center;
+}
+
+.horizontal-scroll figcaption {
+    text-align: center;
 }
 
 /* LINKS */
