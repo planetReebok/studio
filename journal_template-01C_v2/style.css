@@ -196,12 +196,10 @@ figcaption {
     display: none !important;
 }
 
-/*
 a:hover figcaption {
     display: block !important;
     z-index: 100; 
 }
-*/
 
 /* ANIMATION */
 
