@@ -1,6 +1,5 @@
 /* LOAD WEB FONTS */
 
-
 /* Sans-serif: Work Sans by Wei Huang */
 
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap');
@@ -17,20 +16,28 @@
 
 :root {
     /* COLOR */
+    /* ! define: color primary */
     --color-pri: HSL();
+    /* ! define: color secondary */
     --color-sec: HSL();
     --color-text: black;
+    /* ! define: color background */
     --color-background: HSL();
+    /* ! define: color accent */
     --color-accent: HSL();
-    /* FONT SIZE */
+
+    /* FONT SIZE & LINE HEIGHT */
     --font-size-body: 1rem;
-    --line-height-body: 1.6;
+    --line-height-body: 1.8;
+    /* ! define: clamp values for headings */
     --font-size-heading1: ;
+    /* ! define: clamp values for headings */
     --font-size-heading2: ;
     --line-height-heading: 1;
-    --font-size-small: 0.875rem; 
-    --line-height-small: 1.25; 
-    /* ! define: do clamp for headings */
+    --font-size-small: 0.875rem;
+    --line-height-small: 1.6;
+
+    /* FONT FAMILY */
     --sans-serif: "Work Sans";
     --serif: "Merriweather";
     --monospace: "Anonymous Pro";
@@ -46,11 +53,13 @@ key reference: Andy Bell, https://andy-bell.co.uk/a-more-modern-css-reset */
     margin: 0;
     padding: 0;
 }
+
 html {
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
 }
+
 body,
 h1,
 h2,
@@ -63,13 +72,16 @@ dl,
 dd {
     margin-block-end: 0;
 }
+
 ul[role='list'],
 ol[role='list'] {
     list-style: none;
 }
+
 body {
     min-height: 100vh;
 }
+
 img,
 picture,
 svg,
@@ -90,12 +102,15 @@ body {
 html {
     font-size: 100%
 }
+
+/*
 body {
-    font-family: "Merriweather", serif;
+    font-family: var(--serif), serif;
     font-size: var(--font-size-body);
-    font-weight: 300; 
     line-height: var(--line-height-body);
 }
+*/
+
 h1,
 h2,
 h3,
@@ -105,6 +120,7 @@ input,
 label {
     line-height: 1.1;
 }
+
 h1,
 h2,
 h3,
@@ -116,24 +132,99 @@ blockquote {
     /* 29 Oct 2023: not supported on Safari, Firefox */
 }
 
+/* LAYOUT: BODY, HEADER, HERO IMAGE, NAV, MAIN, FOOTER */
+/* key reference: Josh W. Comeau, https://www.joshwcomeau.com/css/full-bleed/
+*/
+
+body {
+    display: grid;
+    grid-template-columns: 1fr min(80ch, calc(100% - 32px)) 1fr;
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
+    grid-row: 1;
+    grid-column: 1/4;
+}
+
+.hero-image {
+    height: 50vh;
+    background-color: #999;
+}
+
+nav {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    margin-bottom: 2rem;
+}
+
+nav p {
+    display: inline;
+
+}
+
+main {
+    grid-row: 2;
+    grid-column: 2/3;
+}
+
+footer {
+    grid-row: 3;
+    grid-column: 2/3;
+    margin: 2rem 0;
+    border-top: 1px solid black;
+}
+
+footer > * {
+    margin: 1rem 0;
+}
+
+/* LAYOUT: IMAGE */
+
+/* !define: classes for various patterns */
+
 /* TYPOGRAPHY IN DETAIL | TYPESETTING */
 
 /* paramters to be defined: 
-- width (~65ch) 
+- font size, font weight 
 - line-height (display, body)
 - letter-spacing
 - 
 */
 
-.para-width {
-    max-width: 70ch; 
-    margin-inline: auto;
+header,
+footer {
+    font-family: var(--sans-serif), sans-serif;
+    font-weight: 400;
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+    letter-spacing: 0.005rem;
 }
 
+main {
+    font-family: var(--serif), serif;
+    font-weight: 300;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+}
+
+header {
+    text-transform: uppercase;
+}
 
 /* LINKS */
 
 a:not([class]) {
     text-decoration-skip-ink: auto;
     color: currentColor;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.155em;
+    text-decoration-color: var(--color-accent);
+}
+
+a:not([class]):hover {
+    text-decoration: none;
 }
