@@ -1,0 +1,321 @@
+/* LOAD WEB FONTS */
+
+/* Sans-serif: Work Sans by Wei Huang */
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap');
+
+/* Serif: Merriweather by Sorkin Type */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+/* Monospace: Anonymous Pro by Mark Simonson */
+
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* ROOT: CUSTOM PROPERTIES (VARIABLES) */
+
+:root {
+    /* COLOR */
+    --color-pri: HSL(205, 100%, 50%);
+    /* ! define: color secondary */
+    --color-sec: HSL();
+    --color-text: black;
+    --color-background: HSL(0 0% 90%);
+    --color-accent: HSL(135 100% 55%);
+
+    /* FONT SIZE & LINE HEIGHT */
+    --font-size-small: clamp(0.875rem, 0.8315rem + 0.2174vw, 1rem);
+    --line-height-small: 1.5;
+    --font-size-body: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+    --line-height-body: 1.75;
+    --font-size-h1: clamp(2.25rem, 2.125rem + 0.625vw, 2.625rem);
+    --font-size-h2: clamp(1.5rem, 1.3125rem + 0.9375vw, 2.0625rem);
+
+    /* FONT FAMILY */
+    --sans-serif: "Work Sans";
+    --serif: "Merriweather";
+    --monospace: "Anonymous Pro";
+}
+
+/* CSS RESETS: GENERAL
+key reference: Andy Bell, article: 
+https://andy-bell.co.uk/a-more-modern-css-reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+body {
+    min-height: 100vh;
+}
+
+img,
+picture,
+svg,
+video {
+    max-width: 100%;
+    display: block;
+}
+
+/* OVERFLOW */
+
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* CSS RESETS: TYPOGRAPHY */
+
+html {
+    font-size: 100%
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1;
+}
+
+h1,
+h2,
+h3,
+h4,
+blockquote {
+    color: color-mix(in oklab, var(--color-pri), black 25%);
+    text-wrap: balance;
+    /* 29 Oct 2023: text-wrap not supported on Safari, Firefox */
+}
+
+/* LAYOUT: NAVIGATION */
+
+nav {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    margin-bottom: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+}
+
+nav p {
+    display: inline;
+
+}
+
+/* LAYOUT: IMAGES. FIGURES */
+
+img {
+    object-fit: cover;
+    object-position: center;
+}
+
+figure:not(.full-bleed) {
+    grid-column: 2/3;
+}
+
+.full-bleed {
+    grid-column: 1/4;
+}
+
+.aspect-1-1 img {
+    aspect-ratio: 1/1;
+}
+
+.aspect-4-3 img {
+    aspect-ratio: 4/3;
+}
+
+.aspect-3-2 img {
+    aspect-ratio: 3/2;
+}
+
+.aspect-16-9 img {
+    aspect-ratio: 16/9;
+}
+
+/* VERTICAL SPACE */
+
+section *,
+figure > *,
+footer > * {
+    margin-top: 1rem;
+}
+
+/* RULES AND BORDERS */
+
+.horizontal-scroll,
+figure {
+    padding: 1rem 0;
+    border-bottom: 1.5px solid var(--color-background);
+}
+
+.horizontal-scroll {
+    border-top: 1.5px solid var(--color-background);
+}
+
+/* LAYOUT: HORIZONTAL SCROLL */
+/* key reference: Kevin Powell, tutorial: https://youtu.be/3yfswsnD2sw?si=1MEtE3e6K0ufnWtx
+*/
+
+.horizontal-scroll {
+    grid-column: 1/4;
+    margin: 2rem;
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: column;
+    grid-auto-columns: clamp(27%, 40vh, 75%);
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    padding-bottom: 1rem;
+}
+
+.horizontal-scroll div {
+    scroll-snap-align: start;
+}
+
+.horizontal-scroll img {
+    object-fit: cover;
+    justify-content: center;
+}
+
+.horizontal-scroll {
+    margin-left: 1rem;
+}
+
+/* TYPOGRAPHY */
+
+/* single column | paragraph width */
+section,
+figure,
+footer {
+    width: min(calc(100% - 2rem), 80ch);
+    margin: 0 auto;
+}
+
+/*
+- font size, font weight 
+- line-height (display, body)
+- letter-spacing
+- vertical space
+- hyphenation 
+*/
+
+header,
+nav,
+footer {
+    font-family: var(--sans-serif), sans-serif;
+    font-weight: 400;
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+    letter-spacing: 0.005rem;
+}
+
+main {
+    font-family: var(--serif), serif;
+    font-weight: 300;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+}
+
+header {
+    text-transform: uppercase;
+}
+
+main *:not(figcaption, h1, img, section) {
+    margin-top: 1.25em;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figcaption {
+    hyphens: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--sans-serif), sans-serif;
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+figcaption {
+    font-family: var(--monospace), monospace;
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+    padding: 1rem 0 0 0;
+    max-width: 80ch;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.full-bleed figcaption {
+    padding: 1rem 1rem 0 1rem;
+}
+
+.horizontal-scroll figcaption {
+    text-align: center;
+}
+
+/* LINKS */
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.155em;
+    text-decoration-color: var(--color-accent);
+}
+
+a:not([class]):hover {
+    text-decoration: none;
+    background-color: var(--color-accent);
+}

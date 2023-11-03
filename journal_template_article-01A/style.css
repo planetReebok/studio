@@ -146,14 +146,17 @@ nav p {
 
 }
 
-main, footer {
+main,
+footer {
     display: grid;
-    grid-template-columns: 1fr min(65ch, calc(100% - 32px)) 1fr;
+        grid-template-columns: 1fr min(65ch, calc(100vw - 32px)) 1fr;
+/*    grid-template-columns: 1fr max(100%-32px, 70ch) 1fr;*/
     grid-template-rows: auto 1fr auto;
 }
 
-section, footer > * {
-    grid-column-start: 2; 
+section,
+footer > * {
+    grid-column-start: 2;
 }
 
 footer {
@@ -196,6 +199,8 @@ figure:not(.full-bleed) {
 }
 
 /* LAYOUT: HORIZONTAL SCROLL */
+/* key reference: Kevin Powell
+*/
 
 .horizontal-scroll {
     grid-column: 1/4;
@@ -209,7 +214,7 @@ figure:not(.full-bleed) {
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline mandatory;
     border-top: 1.5px solid var(--color-background);
-    padding-bottom: 1rem; 
+    padding-bottom: 1rem;
     border-bottom: 1.5px solid var(--color-background);
 }
 
