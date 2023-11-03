@@ -23,9 +23,8 @@
     --monospace: "lexia-mono-variable", sans-serif;
 }
 
-/* CSS RESETS: GENERAL
-key reference: Andy Bell, article: 
-https://andy-bell.co.uk/a-more-modern-css-reset */
+/* CSS RESET: GENERAL
+key reference: Andy Bell, https://andy-bell.co.uk/a-more-modern-css-reset */
 
 *,
 *::before,
@@ -33,12 +32,6 @@ https://andy-bell.co.uk/a-more-modern-css-reset */
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-html {
-    -moz-text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
 }
 
 body,
@@ -71,16 +64,19 @@ video {
     display: block;
 }
 
-/* OVERFLOW */
+/* CSS RESET: OVERFLOW */
 
 body {
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
-/* CSS RESETS: TYPOGRAPHY */
+/* CSS RESET: TYPOGRAPHY */
 
 html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
     font-size: 100%
 }
 
@@ -99,9 +95,31 @@ h2,
 h3,
 h4,
 blockquote {
-    color: color-mix(in oklab, var(--color-pri), black 25%);
     text-wrap: balance;
     /* 29 Oct 2023: text-wrap not supported on Safari, Firefox */
+}
+
+/* LAYOUT: SINGLE COLUMN */
+
+header,
+section,
+figure,
+footer
+    {
+    font-family: var(--sans-serif), sans-serif;
+    font-weight: 400;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    width: min(calc(100vw - 2rem), 70ch);
+    max-width: 70ch;
+    margin: 0 auto;
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+    color: color-mix(in oklab, var(--color-pri), black 25%);
+    font-weight: 900;
 }
 
 /* LAYOUT: NAVIGATION */
@@ -121,14 +139,15 @@ nav {
 
 nav p {
     display: inline;
-
+    text-transform: uppercase;
 }
 
-/* LAYOUT: IMAGES. FIGURES */
+/* LAYOUT: IMAGES, FIGURES */
 
 img {
     object-fit: cover;
     object-position: center;
+    overflow: hidden;
 }
 
 figure:not(.full-bleed) {
@@ -204,32 +223,6 @@ figure {
 
 .horizontal-scroll {
     margin-left: 1rem;
-}
-
-/* TYPOGRAPHY */
-
-/* single column | paragraph width */
-section,
-figure,
-footer {
-    width: min(calc(100% - 2rem), 70ch);
-    margin: 0 auto;
-}
-
-/*
-- font size, font weight 
-- line-height (display, body)
-- letter-spacing
-- vertical space
-- hyphenation 
-*/
-
-section p {
-    font-family: var(--sans-serif), serif;
-    font-size: var(--font-size-body);
-    font-weight: 400;
-    line-height: var(--line-height-body);
-    color: blue; 
 }
 
 /* LINKS */

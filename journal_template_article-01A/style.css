@@ -37,7 +37,7 @@
     --monospace: "Anonymous Pro";
 }
 
-/* CSS RESETS: GENERAL
+/* CSS RESET: GENERAL
 key reference: Andy Bell, https://andy-bell.co.uk/a-more-modern-css-reset */
 
 *,
@@ -46,12 +46,6 @@ key reference: Andy Bell, https://andy-bell.co.uk/a-more-modern-css-reset */
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-html {
-    -moz-text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
 }
 
 body,
@@ -84,16 +78,19 @@ video {
     display: block;
 }
 
-/* OVERFLOW */
+/* CSS RESET: OVERFLOW */
 
 body {
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
-/* CSS RESETS: TYPOGRAPHY */
+/* CSS RESET: TYPOGRAPHY */
 
 html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
     font-size: 100%
 }
 
@@ -149,8 +146,8 @@ nav p {
 main,
 footer {
     display: grid;
-        grid-template-columns: 1fr min(65ch, calc(100vw - 32px)) 1fr;
-/*    grid-template-columns: 1fr max(100%-32px, 70ch) 1fr;*/
+    grid-template-columns: 1fr min(65ch, calc(100vw - 32px)) 1fr;
+    /*    grid-template-columns: 1fr max(100%-32px, 70ch) 1fr;*/
     grid-template-rows: auto 1fr auto;
 }
 
