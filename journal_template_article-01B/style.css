@@ -212,7 +212,7 @@ figure {
 section,
 figure,
 footer {
-    width: min(calc(100% - 2rem), 80ch);
+    width: min(calc(100% - 2rem), 70ch);
     margin: 0 auto;
 }
 
@@ -226,10 +226,10 @@ footer {
 
 section p {
     font-family: var(--sans-serif), serif;
-    font-size: var(-font-size-small);
-    font-weight: 300;
-    line-height: var(--line-height-small);
-    color: red;
+    font-size: var(--font-size-body);
+    font-weight: 400;
+    line-height: var(--line-height-body);
+    color: blue; 
 }
 
 /* LINKS */
