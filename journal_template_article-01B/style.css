@@ -1,17 +1,3 @@
-/* LOAD WEB FONTS */
-
-/* Sans-serif: Work Sans by Wei Huang */
-
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap');
-
-/* Serif: Merriweather by Sorkin Type */
-
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
-
-/* Monospace: Anonymous Pro by Mark Simonson */
-
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
 /* ROOT: CUSTOM PROPERTIES (VARIABLES) */
 
 :root {
@@ -32,9 +18,9 @@
     --font-size-h2: clamp(1.5rem, 1.3125rem + 0.9375vw, 2.0625rem);
 
     /* FONT FAMILY */
-    --sans-serif: "Work Sans";
-    --serif: "Merriweather";
-    --monospace: "Anonymous Pro";
+    --sans-serif: "degular-variable", sans-serif;
+    --serif: ;
+    --monospace: "lexia-mono-variable", sans-serif;
 }
 
 /* CSS RESETS: GENERAL
@@ -239,10 +225,11 @@ footer {
 */
 
 section p {
-    font-family: var(--serif), serif; 
+    font-family: var(--sans-serif), serif;
     font-size: var(-font-size-small);
-    font-weight: 300; 
-    line-height: var(--line-height-small); 
+    font-weight: 300;
+    line-height: var(--line-height-small);
+    color: red;
 }
 
 /* LINKS */
