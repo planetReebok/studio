@@ -238,71 +238,11 @@ footer {
 - hyphenation 
 */
 
-header,
-nav,
-footer {
-    font-family: var(--sans-serif), sans-serif;
-    font-weight: 400;
-    font-size: var(--font-size-small);
-    line-height: var(--line-height-small);
-    letter-spacing: 0.005rem;
-}
-
-main {
-    font-family: var(--serif), serif;
-    font-weight: 300;
-    font-size: var(--font-size-body);
-    line-height: var(--line-height-body);
-}
-
-header {
-    text-transform: uppercase;
-}
-
-main *:not(figcaption, h1, img, section) {
-    margin-top: 1.25em;
-}
-
-h1,
-h2,
-h3,
-h4,
-p,
-figcaption {
-    hyphens: auto;
-}
-
-h1,
-h2,
-h3,
-h4 {
-    font-family: var(--sans-serif), sans-serif;
-}
-
-h1 {
-    font-size: var(--font-size-h1);
-}
-
-h2 {
-    font-size: var(--font-size-h2);
-}
-
-figcaption {
-    font-family: var(--monospace), monospace;
-    font-size: var(--font-size-small);
-    line-height: var(--line-height-small);
-    padding: 1rem 0 0 0;
-    max-width: 80ch;
-    margin: 0 auto;
-    justify-content: center;
-}
-
-.full-bleed figcaption {
-    padding: 1rem 1rem 0 1rem;
-}
-
-.horizontal-scroll figcaption {
-    text-align: center;
+section p {
+    font-family: var(--serif), serif; 
+    font-size: var(-font-size-body);
+    font-weight: 300; 
+    line-height: var(--line-height-body); 
 }
 
 /* LINKS */
