@@ -240,9 +240,9 @@ footer {
 
 section p {
     font-family: var(--serif), serif; 
-    font-size: var(-font-size-body);
+    font-size: var(-font-size-small);
     font-weight: 300; 
-    line-height: var(--line-height-body); 
+    line-height: var(--line-height-small); 
 }
 
 /* LINKS */
