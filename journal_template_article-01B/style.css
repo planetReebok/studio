@@ -10,17 +10,20 @@
     --color-accent: HSL(325 100% 50%);
 
     /* FONT SIZE & LINE HEIGHT */
-    --font-size-small: clamp(0.875rem, 0.8315rem + 0.2174vw, 1rem);
+    /*    --font-size-small: clamp(0.875rem, 0.8315rem + 0.2174vw, 1rem);*/
+    --font-size-small: 1rem;
     --line-height-small: 1.5;
-    --font-size-body: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+    /*    --font-size-body: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);*/
+    --font-size-body: 1.2rem;
     --line-height-body: 1.75;
     --font-size-h1: clamp(2.25rem, 2.125rem + 0.625vw, 2.625rem);
     --font-size-h2: clamp(1.5rem, 1.3125rem + 0.9375vw, 2.0625rem);
 
     /* FONT FAMILY */
     --sans-serif: "degular-variable", sans-serif;
+    /* ! define: serif */
     --serif: ;
-    --monospace: "lexia-mono-variable", sans-serif;
+    --monospace: "lexia-mono-variable", monospace;
 }
 
 /* CSS RESET: GENERAL
@@ -102,7 +105,8 @@ blockquote {
 /* COLOR (COLOUR) */
 
 h1,
-h2 {
+h2,
+h3 {
     color: color-mix(in oklab, var(--color-pri), black 25%);
 }
 
@@ -115,7 +119,7 @@ figure {
 }
 
 footer > * {
-    margin: 0 1rem; 
+    margin: 0 1rem;
 }
 
 /* TYPOGRAPHY */
@@ -128,6 +132,13 @@ h1 {
 h2 {
     font-size: var(--font-size-h2);
     font-variation-settings: 'ital'0, 'opsz'6, 'wght'300;
+}
+
+h3 {
+    text-transform: uppercase; 
+    letter-spacing: 0.075em; 
+    font-size: var(--font-size-body);
+    font-variation-settings: 'ital'0, 'opsz'6, 'wght'600;
 }
 
 header,
@@ -149,6 +160,19 @@ figure,
 footer {
     font-size: var(--font-size-small);
     line-height: var(--line-height-small);
+}
+
+pre,
+code {
+    font-family: var(--monospace), monospace;
+    font-variation-settings: 'wght'300;
+    font-size: var(--font-size-small);
+    line-height: inherit;
+    background-color: var(--color-background); 
+}
+
+pre {
+    outline: 2px solid var(--color-background); 
 }
 
 /* LAYOUT: NAVIGATION */
@@ -211,12 +235,14 @@ footer > * {
     margin-top: 1rem;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
     margin-top: 2rem;
 }
 
 footer {
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 }
 
 /* RULES AND BORDERS */
