@@ -5,9 +5,9 @@
     --color-pri: HSL(205, 100%, 50%);
     /* ! define: color secondary */
     --color-sec: HSL();
-    --color-text: black;
+    --color-text: HSL(0 0% 0%);
     --color-background: HSL(0 0% 90%);
-    --color-accent: HSL(135 100% 55%);
+    --color-accent: HSL(325 100% 50%);
 
     /* FONT SIZE & LINE HEIGHT */
     --font-size-small: clamp(0.875rem, 0.8315rem + 0.2174vw, 1rem);
@@ -99,27 +99,56 @@ blockquote {
     /* 29 Oct 2023: text-wrap not supported on Safari, Firefox */
 }
 
+/* COLOR (COLOUR) */
+
+h1,
+h2 {
+    color: color-mix(in oklab, var(--color-pri), black 25%);
+}
+
 /* LAYOUT: SINGLE COLUMN */
 
-header,
 section,
-figure,
-footer
-    {
-    font-family: var(--sans-serif), sans-serif;
-    font-weight: 400;
-    font-size: var(--font-size-body);
-    line-height: var(--line-height-body);
-    width: min(calc(100vw - 2rem), 70ch);
-    max-width: 70ch;
+figure {
+    width: min(calc(100vw - 2rem), 55ch);
     margin: 0 auto;
+}
+
+footer > * {
+    margin: 0 1rem; 
 }
 
 /* TYPOGRAPHY */
 
 h1 {
-    color: color-mix(in oklab, var(--color-pri), black 25%);
-    font-weight: 900;
+    font-size: var(--font-size-h1);
+    font-variation-settings: 'ital'0, 'opsz'6, 'wght'275;
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    font-variation-settings: 'ital'0, 'opsz'6, 'wght'300;
+}
+
+header,
+nav,
+section,
+figure,
+footer > * {
+    font-family: var(--sans-serif), sans-serif;
+    font-variation-settings: 'ital'0, 'opsz'6, 'wght'400;
+}
+
+section {
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+}
+
+nav,
+figure,
+footer {
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
 }
 
 /* LAYOUT: NAVIGATION */
@@ -129,7 +158,6 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 1px solid black;
     margin-bottom: 1.5rem;
     position: sticky;
     top: 0;
@@ -178,19 +206,34 @@ figure:not(.full-bleed) {
 
 section *,
 figure > *,
+footer,
 footer > * {
     margin-top: 1rem;
 }
 
+h2, h3, h4 {
+    margin-top: 2rem;
+}
+
+footer {
+    margin-bottom: 2rem;
+}
+
 /* RULES AND BORDERS */
 
-.horizontal-scroll,
-figure {
-    padding: 1rem 0;
+nav,
+figure,
+.horizontal-scroll {
     border-bottom: 1.5px solid var(--color-background);
 }
 
+figure,
 .horizontal-scroll {
+    padding: 1rem 0;
+}
+
+.horizontal-scroll,
+footer {
     border-top: 1.5px solid var(--color-background);
 }
 
