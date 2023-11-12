@@ -13,8 +13,44 @@ html {
     text-size-adjust: none;
     font-size: 100%;
 }
+
+/* LAYOUT: SINGLE-COLUMN */
+
 section {
-    width: min(calc(100vw - 2rem), 65ch);
+    width: min(calc(100vw - 2rem), 55ch);
     margin: 0 auto;
-    background: beige;
+}
+
+/* FONT FAMILY */
+
+body {
+    font-family: "degular-variable", sans-serif;
+}
+
+/* FONT SIZE */
+
+p {
+    font-size: 1rem;
+    font-variation-settings: 'wght' 375;
+}
+
+/* LINE HEIGHT */
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.1;
+}
+p {
+    line-height: 1.6;
+}
+
+/* VERTICAL SPACE */
+
+h1 {
+    margin: 2rem 0;
+}
+p {
+    margin-top: 1rem;
 }
