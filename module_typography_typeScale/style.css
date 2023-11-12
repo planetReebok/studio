@@ -7,19 +7,23 @@
     margin: 0;
     padding: 0;
 }
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    font-size: 100%
+}
 
 /* FONT FAMILY */
 
 body {
     font-family: "degular-variable", sans-serif;
-    /*    background-color: black; */
-    /*    color: color-mix(in oklab, darkseagreen, white);  */
 }
 
 /* FONT SIZE */
 
 p {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-variation-settings: 'wght' 375;
 }
 
@@ -30,6 +34,7 @@ h2,
 h3,
 h4 {
     line-height: 1.1;
+    color: red; 
 }
 p {
     line-height: 1.6;
@@ -38,15 +43,16 @@ p {
 /* LAYOUT: SINGLE-COLUMN */
 
 section {
-    width: min(calc(100vw - 32px), 65ch);
+    /*    width: min(calc(100vw - 32px), 65ch);*/
     margin: 0 auto;
+    background: beige;
 }
 
 /* VERTICAL SPACE */
 
 h1 {
-    margin: 2rem 0;
+/*    margin: 2rem 0;*/
 }
 p {
-    margin-top: 1rem;
+/*    margin-top: 1rem;*/
 }
