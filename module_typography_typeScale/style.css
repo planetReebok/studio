@@ -11,48 +11,10 @@ html {
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
-    font-size: 100%
+    font-size: 100%;
 }
-
-/* FONT FAMILY */
-
-body {
-    font-family: "degular-variable", sans-serif;
-}
-
-/* FONT SIZE */
-
-p {
-    font-size: 1rem;
-    font-variation-settings: 'wght' 375;
-}
-
-/* LINE HEIGHT */
-
-h1,
-h2,
-h3,
-h4 {
-    line-height: 1.1;
-    color: red; 
-}
-p {
-    line-height: 1.6;
-}
-
-/* LAYOUT: SINGLE-COLUMN */
-
 section {
-    /*    width: min(calc(100vw - 32px), 65ch);*/
+    width: min(calc(100vw - 2rem), 65ch);
     margin: 0 auto;
     background: beige;
-}
-
-/* VERTICAL SPACE */
-
-h1 {
-/*    margin: 2rem 0;*/
-}
-p {
-/*    margin-top: 1rem;*/
 }
