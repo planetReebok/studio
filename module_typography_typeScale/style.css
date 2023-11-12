@@ -19,8 +19,8 @@ html {
 section {
     width: calc(100vw - 2rem);
     margin: 0 auto;
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
 }
 
 /* FONT FAMILY */
@@ -33,7 +33,8 @@ body {
 
 section {
     font-size: 1rem;
-    font-variation-settings: 'wght' 375;
+    font-variation-settings: 'wght' 400;
+    color: blue; 
 }
 
 /* CONTAINER QUERY: BODY */
@@ -44,8 +45,10 @@ section {
 @container (width > 29em) {
     section {
         font-size: 1.25rem;
-        max-width: 60ch; 
-        margin: 0 auto; 
+        font-variation-settings: 'wght' 375;
+        max-width: 60ch;
+        margin: 0 auto;
+        color: darkmagenta; 
     }
 }
 
