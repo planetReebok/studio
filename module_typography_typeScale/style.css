@@ -17,7 +17,6 @@ html {
 /* LAYOUT: SINGLE-COLUMN */
 
 section {
-    width: calc(100vw - 2rem);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -34,21 +33,20 @@ body {
 section {
     font-size: 1rem;
     font-variation-settings: 'wght' 400;
-    color: blue; 
 }
 
 /* CONTAINER QUERY: BODY */
 
-.para-width {
+.width-body {
     container-type: inline-size;
 }
 @container (width > 29em) {
     section {
         font-size: 1.25rem;
         font-variation-settings: 'wght' 375;
-        max-width: 60ch;
+        max-width: 55ch;
         margin: 0 auto;
-        color: darkmagenta; 
+        color: blue;
     }
 }
 
