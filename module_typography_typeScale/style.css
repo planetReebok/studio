@@ -17,8 +17,10 @@ html {
 /* LAYOUT: SINGLE-COLUMN */
 
 section {
-    width: min(calc(100vw - 2rem), 55ch);
+    width: calc(100vw - 2rem);
     margin: 0 auto;
+    display: flex; 
+    flex-direction: column; 
 }
 
 /* FONT FAMILY */
@@ -29,9 +31,22 @@ body {
 
 /* FONT SIZE */
 
-p {
+section {
     font-size: 1rem;
     font-variation-settings: 'wght' 375;
+}
+
+/* CONTAINER QUERY: BODY */
+
+.para-width {
+    container-type: inline-size;
+}
+@container (width > 29em) {
+    section {
+        font-size: 1.25rem;
+        max-width: 60ch; 
+        margin: 0 auto; 
+    }
 }
 
 /* LINE HEIGHT */
