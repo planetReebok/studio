@@ -35,10 +35,10 @@ p {
     line-height: 1.6;
 }
 
-/* SINGLE-COLUMN LAYOUT */
+/* LAYOUT: SINGLE-COLUMN */
 
 section {
-    width: min(calc(100vw - 2rem), 65ch);
+    width: min(calc(100vw - 32px), 65ch);
     margin: 0 auto;
 }
 
