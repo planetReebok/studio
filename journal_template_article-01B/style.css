@@ -6,19 +6,19 @@
     /* ! define: color secondary */
     --color-sec: HSL();
     --color-text: HSL(0 0% 0%);
-    --color-background: HSL(0 0% 90%);
+    --color-background: HSL(0 0% 93%);
     --color-accent: HSL(325 100% 50%);
-
     /* FONT SIZE & LINE HEIGHT */
-    /*    --font-size-small: clamp(0.875rem, 0.8315rem + 0.2174vw, 1rem);*/
-    --font-size-small: 1rem;
+    --font-size-small: clamp(0.875rem, 0.8315rem + 0.2174vw, 1rem);
+    /*    --font-size-small: 1rem;*/
     --line-height-small: 1.5;
-    /*    --font-size-body: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);*/
-    --font-size-body: 1.2rem;
+    --font-size-body: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+    /*    --font-size-body: 1.2rem;*/
     --line-height-body: 1.75;
     --font-size-h1: clamp(2.25rem, 2.125rem + 0.625vw, 2.625rem);
     --font-size-h2: clamp(1.5rem, 1.3125rem + 0.9375vw, 2.0625rem);
-
+    /* ! define: h3 font size */
+    --font-size-h3: ;
     /* FONT FAMILY */
     --sans-serif: "degular-variable", sans-serif;
     /* ! define: serif */
@@ -36,7 +36,6 @@ key reference: Andy Bell, https://andy-bell.co.uk/a-more-modern-css-reset */
     margin: 0;
     padding: 0;
 }
-
 body,
 h1,
 h2,
@@ -49,16 +48,13 @@ dl,
 dd {
     margin-block-end: 0;
 }
-
 ul[role='list'],
 ol[role='list'] {
     list-style: none;
 }
-
 body {
     min-height: 100vh;
 }
-
 img,
 picture,
 svg,
@@ -82,7 +78,6 @@ html {
     text-size-adjust: none;
     font-size: 100%
 }
-
 h1,
 h2,
 h3,
@@ -92,7 +87,6 @@ input,
 label {
     line-height: 1.1;
 }
-
 h1,
 h2,
 h3,
@@ -117,7 +111,6 @@ figure {
     width: min(calc(100vw - 2rem), 55ch);
     margin: 0 auto;
 }
-
 footer > * {
     margin: 0 1rem;
 }
@@ -128,19 +121,16 @@ h1 {
     font-size: var(--font-size-h1);
     font-variation-settings: 'ital'0, 'opsz'6, 'wght'275;
 }
-
 h2 {
     font-size: var(--font-size-h2);
     font-variation-settings: 'ital'0, 'opsz'6, 'wght'300;
 }
-
 h3 {
-    text-transform: uppercase; 
-    letter-spacing: 0.075em; 
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
     font-size: var(--font-size-body);
     font-variation-settings: 'ital'0, 'opsz'6, 'wght'600;
 }
-
 header,
 nav,
 section,
@@ -149,30 +139,26 @@ footer > * {
     font-family: var(--sans-serif), sans-serif;
     font-variation-settings: 'ital'0, 'opsz'6, 'wght'400;
 }
-
 section {
     font-size: var(--font-size-body);
     line-height: var(--line-height-body);
 }
-
 nav,
 figure,
 footer {
     font-size: var(--font-size-small);
     line-height: var(--line-height-small);
 }
-
 pre,
 code {
     font-family: var(--monospace), monospace;
     font-variation-settings: 'wght'300;
     font-size: var(--font-size-small);
     line-height: inherit;
-    background-color: var(--color-background); 
+    background-color: var(--color-background);
 }
-
 pre {
-    outline: 2px solid var(--color-background); 
+    outline: 2px solid var(--color-background);
 }
 
 /* LAYOUT: NAVIGATION */
@@ -188,7 +174,6 @@ nav {
     z-index: 100;
     background-color: white;
 }
-
 nav p {
     display: inline;
     text-transform: uppercase;
@@ -201,27 +186,21 @@ img {
     object-position: center;
     overflow: hidden;
 }
-
 figure:not(.full-bleed) {
     grid-column: 2/3;
 }
-
 .full-bleed {
     grid-column: 1/4;
 }
-
 .aspect-1-1 img {
     aspect-ratio: 1/1;
 }
-
 .aspect-4-3 img {
     aspect-ratio: 4/3;
 }
-
 .aspect-3-2 img {
     aspect-ratio: 3/2;
 }
-
 .aspect-16-9 img {
     aspect-ratio: 16/9;
 }
@@ -234,13 +213,11 @@ footer,
 footer > * {
     margin-top: 1rem;
 }
-
 h2,
 h3,
 h4 {
     margin-top: 2rem;
 }
-
 footer {
     margin: 2rem 0;
 }
@@ -252,18 +229,18 @@ figure,
 .horizontal-scroll {
     border-bottom: 1.5px solid var(--color-background);
 }
-
 figure,
 .horizontal-scroll {
     padding: 1rem 0;
 }
-
 .horizontal-scroll,
 footer {
     border-top: 1.5px solid var(--color-background);
 }
 
 /* LAYOUT: HORIZONTAL SCROLL */
+
+
 /* key reference: Kevin Powell, tutorial: https://youtu.be/3yfswsnD2sw?si=1MEtE3e6K0ufnWtx
 */
 
@@ -280,16 +257,13 @@ footer {
     scroll-snap-type: inline mandatory;
     padding-bottom: 1rem;
 }
-
 .horizontal-scroll div {
     scroll-snap-align: start;
 }
-
 .horizontal-scroll img {
     object-fit: cover;
     justify-content: center;
 }
-
 .horizontal-scroll {
     margin-left: 1rem;
 }
@@ -303,7 +277,6 @@ a:not([class]) {
     text-underline-offset: 0.155em;
     text-decoration-color: var(--color-accent);
 }
-
 a:not([class]):hover {
     text-decoration: none;
     background-color: var(--color-accent);

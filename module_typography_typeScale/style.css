@@ -1,0 +1,52 @@
+/* RESET */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* FONT FAMILY */
+
+body {
+    font-family: "degular-variable", sans-serif;
+    /*    background-color: black; */
+    /*    color: color-mix(in oklab, darkseagreen, white);  */
+}
+
+/* FONT SIZE */
+
+p {
+    font-size: 1.25rem;
+    font-variation-settings: 'wght' 375;
+}
+
+/* LINE HEIGHT */
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.1;
+}
+p {
+    line-height: 1.6;
+}
+
+/* SINGLE-COLUMN LAYOUT */
+
+section {
+    width: min(calc(100vw - 2rem), 65ch);
+    margin: 0 auto;
+}
+
+/* VERTICAL SPACE */
+
+h1 {
+    margin: 2rem 0;
+}
+p {
+    margin-top: 1rem;
+}
