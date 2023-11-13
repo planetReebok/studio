@@ -1,0 +1,138 @@
+/* RESET */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    font-size: 100%;
+}
+
+/* LAYOUT: SINGLE-COLUMN */
+
+section {
+    width: calc(100vw - 36px);
+    margin: 0 auto;
+}
+
+/* FONT FAMILY */
+
+body {
+    font-family: "degular-variable", sans-serif;
+}
+
+/* FONT SIZE */
+
+section {
+    font-size: 1rem;
+    font-variation-settings: 'wght' 400;
+}
+
+/* CONTAINER QUERY: BODY */
+
+.width-body {
+    container-type: inline-size;
+}
+@container (width > 29em) {
+    .width-body > *:not(figure, hr) {
+        font-size: 1.25rem;
+        font-variation-settings: 'wght' 375;
+        max-width: 55ch;
+        margin: 0 auto;
+        /*        color: blue;*/
+    }
+}
+
+/* LINE HEIGHT */
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.1;
+}
+p {
+    line-height: 1.6;
+}
+
+/* VERTICAL SPACE */
+
+body > *:first-child {
+    margin-top: 2rem;
+}
+h1,
+hr {
+    padding: 2rem 0;
+}
+h2 {
+    padding: 1rem 0;
+}
+p {
+    margin-top: 1rem;
+}
+section:last-of-type {
+    margin-bottom: 3rem;
+}
+
+/* LIST */
+
+li {
+    list-style-position: outside;
+}
+ul ul {
+    padding-left: 1.25rem;
+}
+ul ul ul {
+    padding-left: 1.5rem;
+}
+
+/* NAVIGATION */
+
+header {
+    margin: 4rem 0;
+}
+header * {
+    text-transform: uppercase; 
+    letter-spacing: 0.05rem; 
+    font-size: 1rem; 
+    font-variation-settings: 'wght' 450; 
+}
+nav {
+    border-bottom: 1px solid black;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-align-center {
+    text-align: center; 
+}
+
+/* STICKY HEADER */
+
+h1,
+h2,
+h3,
+h4 {
+    background-color: white;
+    position: sticky;
+    top: 0rem;
+    border-left: 1.5rem solid white;
+    /* border covers list-style-position: outside */
+    margin-left: -1.5rem;
+    /* negative margin */
+}
+
+/* PLACEHOLDER */
+
+figure {
+    width: 100%;
+    aspect-ratio: 1/2;
+    background-color: #999;
+}
