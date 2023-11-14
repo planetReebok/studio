@@ -1,0 +1,19 @@
+/* RESET */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    font-size: 100%;
+}
+
+/* LAYOUT: SINGLE COLUMN WITH BREAKOUTS 
+reference: A new approach to container and wrapper classes https://youtu.be/c13gpBrnGEw?si=L_F0TePLpxrzwXRz */
+
